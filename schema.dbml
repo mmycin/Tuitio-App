@@ -1,0 +1,81 @@
+Enum ClassType {
+  Monthly
+  Day
+  Course
+}
+
+Enum ClassStatus {
+  Done
+  Cancelled
+  Delayed
+}
+
+enum PaymentStatus {
+  Paid
+  Due
+  Unpaid
+  Problem
+}
+
+
+Table Teacher {
+  id integer pk
+  name string
+  salary integer
+}
+
+Table Student {
+  id integer pk
+  name string
+  address string
+  phone string[]
+  type ClassType
+  amount integer
+  teacher_id integer
+
+  created_at datetime
+  updated_at datetime
+  deleted_at datetime
+}
+
+Table Class {
+  id integer pk
+  title integer 
+  dated datetime
+  duration time
+  student_id integer
+
+  created_at datetime
+  updated_at datetime
+  deleted_at datetime
+}
+
+Table Schedule {
+  id integer pk
+  schedule datetime
+  preference datetime
+  status ClassStatus
+  teacher_id integer
+
+  created_at datetime
+  updated_at datetime
+  deleted_at datetime
+}
+
+Table Payment {
+  trx_id integer pk
+  amount integer
+  status PaymentStatus
+  session string
+  student_id integer
+
+  created_at datetime
+  updated_at datetime
+  deleted_at datetime
+}
+
+Ref: "Class"."student_id" > "Student"."id"
+Ref: "Payment"."student_id" > "Student"."id"
+Ref: "Student"."teacher_id" > "Teacher"."id"
+Ref: "Schedule"."teacher_id" > "Teacher"."id"
+
