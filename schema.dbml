@@ -5,6 +5,7 @@ Enum ClassType {
 }
 
 Enum ClassStatus {
+	Pending
   Done
   Cancelled
   Delayed
@@ -15,6 +16,13 @@ enum PaymentStatus {
   Due
   Unpaid
   Problem
+}
+
+enum PaymentType {
+	Cash
+	Bkash
+	Bank
+	Others
 }
 
 
@@ -43,6 +51,8 @@ Table Class {
   title integer 
   dated datetime
   duration time
+  homework string
+  notes string[]
   student_id integer
 
   created_at datetime
@@ -63,10 +73,12 @@ Table Schedule {
 }
 
 Table Payment {
-  trx_id integer pk
+  trx_id string pk // UUID
   amount integer
   status PaymentStatus
   session string
+  type PaymentType
+  from string 
   student_id integer
 
   created_at datetime
