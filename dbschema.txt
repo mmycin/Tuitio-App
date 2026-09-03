@@ -1,0 +1,130 @@
+notation crows-foot
+colorMode outline
+styleMode plain
+typeface mono
+title Tuitio DB Diagram
+
+Users [icon: person, color: blue] {
+  id int
+  firstname string
+  lastname string
+  phone string
+  email string
+  password string
+  bio text
+  avatar string
+}
+
+UserRoles [icon: tag, color: gray] {
+  id int
+  user_id int
+  role string // student | teacher
+}
+
+Students [icon: person, color: yellow] {
+  id int
+  user_id int
+  student_code string
+}
+
+Teachers [icon: person, color: red] {
+  id int
+  user_id int
+}
+
+Education [icon: book, color: purple] {
+  id int
+  user_id int
+  institution string
+  degree string
+  major string
+  start_date date
+  end_date date
+}
+
+Addresses [icon: map, color: orange] {
+  id int
+  user_id int
+  house string
+  street string
+  area string
+  city string
+}
+
+Experience [icon: brain, color: green] {
+  id int
+  user_id int
+  title string
+  institution string
+  start_date date
+  end_date date
+  responsibilities text
+}
+
+Payments [icon: payment, color: green] {
+  id int
+  user_id int
+  amount int
+  status string // pending | paid | failed
+  type string // class | monthly | course
+  provider string
+  trx_ref string
+}
+
+Classes [icon: paper-plane] {
+  id int
+  teacher_id int
+  title string
+  description text
+}
+
+ClassStudents [icon: users, color: yellow] {
+  id int
+  class_id int
+  student_id int
+}
+
+Schedules [icon: timer, color: orange] {
+  id int
+  class_id int
+  title string
+  start_time datetime
+  duration_minutes int
+  status string // pending | done | canceled
+}
+
+ScheduleTopics {
+  id int
+  schedule_id int
+  topic string
+}
+
+ScheduleHomeworks {
+  id int
+  schedule_id int
+  homework string
+}
+
+ScheduleNotes {
+  id int
+  schedule_id int
+  note string
+}
+
+// RELATIONS
+UserRoles.user_id > Users.id
+Students.user_id > Users.id
+Teachers.user_id > Users.id
+Addresses.user_id > Users.id
+Education.user_id > Users.id
+Experience.user_id > Users.id
+Payments.user_id > Users.id
+
+Classes.teacher_id > Teachers.id
+ClassStudents.class_id > Classes.id
+ClassStudents.student_id > Students.id
+
+Schedules.class_id > Classes.id
+ScheduleTopics.schedule_id > Schedules.id
+ScheduleHomeworks.schedule_id > Schedules.id
+ScheduleNotes.schedule_id > Schedules.id
