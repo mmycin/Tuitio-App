@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:tuitio/features/students/student_page.dart';
+import 'package:tuitio/features/students/students_page.dart';
 import 'package:tuitio/features/dashboard/dashboard_page.dart';
 
 final appRouter = GoRouter(
@@ -13,7 +13,7 @@ final appRouter = GoRouter(
 
     GoRoute(
       path: '/students',
-      builder: (context, state) => const StudentPage(),
+      builder: (context, state) => const StudentsPage(),
     ),
   ]
 );
