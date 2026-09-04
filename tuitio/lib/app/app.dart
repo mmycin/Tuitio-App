@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shadcn_ui/shadcn_ui.dart';
 import 'router.dart';
 
 class TuitioApp extends StatelessWidget {
@@ -6,9 +7,18 @@ class TuitioApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: "Tuitio",
+    return ShadApp.router(
+      title: 'Tuitio',
+      debugShowCheckedModeBanner: false,
       routerConfig: appRouter,
+      theme: ShadThemeData(
+        brightness: Brightness.light,
+        colorScheme: const ShadOrangeColorScheme.light(
+          primary: Color(0xFFEA580C), // Vibrant Orange
+          background: Color(0xFFF8FAFC), // Soft Crisp Slate background
+          card: Color(0xFFFFFFFF),
+        ),
+      ),
     );
   }
 }

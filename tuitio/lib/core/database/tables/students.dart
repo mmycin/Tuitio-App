@@ -7,6 +7,8 @@ class Students extends Table {
 
   TextColumn get phone => text().nullable()();
 
+  IntColumn get classesPerMonth => integer().withDefault(const Constant(12))();
+
   IntColumn get monthlyFee => integer().nullable()();
 
   DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime)();
