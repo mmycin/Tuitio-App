@@ -18,14 +18,14 @@
 
 ## 🛠️ Technology Stack
 
-| Layer | Technology |
-| :--- | :--- |
-| **Framework** | [Flutter](https://flutter.dev) (Dart 3.x) |
-| **State Management** | [Flutter Riverpod](https://riverpod.dev) (v3) |
-| **Database / Persistence** | [Drift](https://drift.simonbinder.eu/) (SQLite native engine) |
-| **UI Components** | [shadcn_ui](https://pub.dev/packages/shadcn_ui) + Custom Cupertino/Material Widgets |
-| **Routing** | [go_router](https://pub.dev/packages/go_router) with Stateful Shells |
-| **Platforms Supported** | Android, iOS, Windows, macOS, Linux, Web |
+| Layer                      | Technology                                                                          |
+| :------------------------- | :---------------------------------------------------------------------------------- |
+| **Framework**              | [Flutter](https://flutter.dev) (Dart 3.x)                                           |
+| **State Management**       | [Flutter Riverpod](https://riverpod.dev) (v3)                                       |
+| **Database / Persistence** | [Drift](https://drift.simonbinder.eu/) (SQLite native engine)                       |
+| **UI Components**          | [shadcn_ui](https://pub.dev/packages/shadcn_ui) + Custom Cupertino/Material Widgets |
+| **Routing**                | [go_router](https://pub.dev/packages/go_router) with Stateful Shells                |
+| **Platforms Supported**    | Android, iOS, Windows, macOS, Linux, Web                                            |
 
 ---
 
@@ -64,27 +64,30 @@ lib/
 ### Installation
 
 1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/mmycin/Tuitio-App.git
-   cd Tuitio-App
-   ```
+
+    ```bash
+    git clone https://github.com/mmycin/Tuitio-App.git
+    cd Tuitio-App
+    ```
 
 2. **Install dependencies:**
-   ```bash
-   flutter pub get
-   ```
+
+    ```bash
+    flutter pub get
+    ```
 
 3. **Generate database models and DAO code:**
-   ```bash
-   dart run build_runner build --delete-conflicting-outputs
-   # Or using Just:
-   just buildGen
-   ```
+
+    ```bash
+    dart run build_runner build --delete-conflicting-outputs
+    # Or using Just:
+    just buildGen
+    ```
 
 4. **Run the app:**
-   ```bash
-   flutter run
-   ```
+    ```bash
+    flutter run
+    ```
 
 ---
 
