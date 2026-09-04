@@ -9,8 +9,9 @@ part 'student_dao.g.dart';
 class StudentDao extends DatabaseAccessor<AppDatabase> with _$StudentDaoMixin {
   StudentDao(super.db);
 
-  Future<List<Student>> getAllStudents() {
-    return select(students).get();
+  Future<List<Student>> getAllStudents() async {
+    final result = await select(students).get();
+    return result.reversed.toList();
   }
 
   Future<Student?> getStudentById(int id) {

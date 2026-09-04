@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:tuitio/features/students/student_providers.dart';
 
@@ -14,7 +15,9 @@ class StudentsPage extends ConsumerWidget {
       appBar: AppBar(title: const Text('Students')),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          context.push('/students/new');
+        },
         child: const Icon(Icons.add),
       ),
 

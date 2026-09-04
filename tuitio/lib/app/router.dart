@@ -2,6 +2,8 @@ import 'package:go_router/go_router.dart';
 import 'package:tuitio/features/students/students_page.dart';
 import 'package:tuitio/features/dashboard/dashboard_page.dart';
 
+import 'package:tuitio/features/students/student_form_page.dart';
+
 final appRouter = GoRouter(
   initialLocation: '/',
 
@@ -14,6 +16,11 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/students',
       builder: (context, state) => const StudentsPage(),
+    ),
+
+    GoRoute(
+      path: '/students/new',
+      builder: (context, state) => const StudentFormPage(),
     ),
   ]
 );
