@@ -1,4 +1,4 @@
-package com.example.tuitio
+package com.mycin.tuitio
 
 import io.flutter.embedding.android.FlutterActivity
 
